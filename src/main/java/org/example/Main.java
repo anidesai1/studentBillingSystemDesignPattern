@@ -2,19 +2,19 @@ package org.example;
 
 public class Main {
     public static void main (String [] args) {
-        CourseWithDiscount gradStudent = new Grad(100);
-        System.out.println(" The fee for grad course is " + gradStudent.calculateFeeBeforeDiscount(gradStudent.getHourlyRate()));
-        System.out.println(" The fee after discount for you as a grad student is " + gradStudent.getCurrentFee(40));
+        Student gradStudent = new Grad(100, 30);
+        System.out.println(" The fee before discount for this grad student is " + gradStudent.calculateFeeBeforeDiscount());
+        System.out.println(" The fee after discount for this grad student is " + gradStudent.getCurrentFee());
 
-        CourseWithDiscount facultyStudent = new HourlyFaculty(100);
-        System.out.println(" The fee for faculty course is " + facultyStudent.calculateFeeBeforeDiscount(facultyStudent.getHourlyRate()));
-        System.out.println(" The fee after discount for you as an hourly faculty is " + facultyStudent.getCurrentFee(45));
+        Student facultyStudent = new Faculty(80, 50);
+        System.out.println(" The fee before discount for this faculty student is " + facultyStudent.calculateFeeBeforeDiscount());
+        System.out.println(" The fee after discount for this faculty student is " + facultyStudent.getCurrentFee());
 
-        CourseWithDiscount tenuredFaculty = new TenuredFaculty(200);
-        System.out.println(" The fee for tenured faculty course is " + tenuredFaculty.calculateFeeBeforeDiscount(tenuredFaculty.getHourlyRate()));
-        System.out.println(" The fee after discount for as a tenured faculty is " + tenuredFaculty.getCurrentFee(45));
+        Student tenuredFaculty = new TenuredFaculty(70, 100);
+        System.out.println(" The fee before discount for this tenured faculty is " + tenuredFaculty.calculateFeeBeforeDiscount());
+        System.out.println(" The fee after discount for this tenured faculty is " + tenuredFaculty.getCurrentFee());
 
         Student undergrad = new Undergrad(80);
-        System.out.println(" The fee for you as an undergrad course is " + undergrad.calculateFeeBeforeDiscount(undergrad.getHourlyRate()));
+        System.out.println(" The fee for this undergrad is " + undergrad.calculateFeeBeforeDiscount());
     }
 }

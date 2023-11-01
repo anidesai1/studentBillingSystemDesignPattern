@@ -1,12 +1,13 @@
 package org.example;
 
 public class Undergrad extends Student {
-    protected Undergrad(double totalHours) {
-        super(totalHours);
+    protected Undergrad(double courseHours) {
+        super(courseHours);
+        super.hourlyRate = 35;
     }
+
     @Override
-    protected double getHourlyRate() {
-        hourlyRate = 30;
-        return hourlyRate;
+    protected double applyDiscount(double fee) {
+        return fee;
     }
 }

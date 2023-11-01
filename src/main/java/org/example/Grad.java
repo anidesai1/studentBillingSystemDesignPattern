@@ -1,25 +1,18 @@
 package org.example;
 
-public class Grad extends CourseWithDiscount{
-    protected Grad(double totalHours) {
-        super(totalHours);
-    }
+public class Grad extends Student {
+    private final double hoursWorkedInAQuarter;
 
+    protected Grad(double courseHours, double hoursWorkedInAQuarter) {
+        super(courseHours);
+        super.hourlyRate = 40;
+        this.hoursWorkedInAQuarter = hoursWorkedInAQuarter;
+    }
     @Override
-    protected double getCurrentFee(double hoursWorkedInAQuarter) {
+    protected double applyDiscount(double fee) {
         if (hoursWorkedInAQuarter >= 30) {
-            discountedAmount = hoursWorkedInAQuarter * 10;
-            feeAfterDiscount = (getHourlyRate() * getTotalHours())- discountedAmount;
+            fee = fee - (hoursWorkedInAQuarter * 20);
         }
-        else {
-            feeAfterDiscount = getTotalHours() * getHourlyRate();
-        }
-        return feeAfterDiscount;
-    }
-
-    @Override
-    protected double getHourlyRate() {
-        hourlyRate = 35;
-        return hourlyRate;
+        return fee;
     }
 }
