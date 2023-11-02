@@ -1,6 +1,6 @@
 package org.example;
 
-public class TenuredFaculty extends Faculty{
+public class TenuredFaculty extends Faculty {
 
     protected TenuredFaculty(double courseHours, double hoursWorkedInAQuarter) {
         super(courseHours, hoursWorkedInAQuarter);
